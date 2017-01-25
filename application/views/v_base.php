@@ -24,6 +24,23 @@
              folder instead of downloading all of them to reduce the load. -->
         <link href="<?php echo base_url('assets/css/skins/_all-skins.min.css'); ?>" rel="stylesheet" type="text/css" />
 
+        <?php if($menu == 'Content' ) {?>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/dropzone.min.css') ?>">
+         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/basic.min.css') ?>">
+
+         <script type="text/javascript" src="<?php echo base_url('assets/jquery.js') ?>"></script>
+         <script type="text/javascript" src="<?php echo base_url('assets/dropzone.min.js') ?>"></script>
+
+         <style type="text/css">
+             body{
+                 background-color: #E8E9EC;
+             }
+             .dropzone {
+                 margin-top: 40px;
+                 border: 2px dashed #0087F7;
+             }
+         </style>
+       <?php }?>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -222,7 +239,6 @@
                         <li class="active"><a href="<?php echo base_url();?>user"><i class="fa fa-book"></i> Add New User</a>
                         </li>
                         */ ?>
-                        <?php $active = $menu == 'Dashboard' ? 'active' : ''; echo $active; ?>
                         <li class="treeview <?php $active = $menu == 'Message' ? 'active' : ''; echo $active; ?>">
                             <a href="#">
                                 <i class="fa fa-envelope"></i> <span>Message</span>
