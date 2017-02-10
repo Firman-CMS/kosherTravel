@@ -40,7 +40,9 @@
 
 $route['default_controller'] = "cms";
 $route['404_override'] = '';
-
+$route['uploadtest/do_upload'] = 'uploadtest/do_upload';
+$route['uploadtest/(:any)'] = 'uploadtest/view/$1';
+$route['uploadtest'] = 'uploadtest';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

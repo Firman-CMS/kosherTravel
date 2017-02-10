@@ -1,6 +1,10 @@
 <?php
-
-class Upload extends CI_Controller
+/*
+ * Firman Silalahi
+ * firman.silahi@gmail.com
+ * feb 2017
+*/
+class Contents extends CI_Controller
 {
 
 	function __construct(){
@@ -12,15 +16,15 @@ class Upload extends CI_Controller
 
 	function index(){
 		// echo CI_VERSION;
-		$data['menu']				= 'Content';
+		$data['menu']			= 'Content';
 		$data['title'] 			= 'New Content';
 		$data['notif_message'] 	= $this->countNotifMessage();
-		$data['content'] 	= $this->load->view('content/v_new_content2' , $data, true);
+		$data['content'] 	= $this->load->view('contents/v_new_contents' , $data, true);
 		$this->load->view('v_base', $data);
 		
 	}
 
-	function upload_content() {
+	function edit_content() {
 		if (isset($_GET["id"])) {
 			$pid = intval($_GET["id"]);
 		}else {
@@ -28,7 +32,7 @@ class Upload extends CI_Controller
 		    exit();	
 		}
 
-
+		/* Pindah ke model */
 		try {
 		$results = "
 			SELECT *
@@ -43,39 +47,45 @@ class Upload extends CI_Controller
 			echo "Data could not be retrieved from the database.";
 			exit;
 		}
-		// var_dump($pid); die;
-		// $pros = $results->fetch(PDO::FETCH_ASSOC); ->result_array();
+
 		$pros = $query->result_array();
-		print_r($pros); //die;
 		$num_files_array = $pros[0]['filename'];
 		$num_files_array = rtrim($num_files_array,',');
 		$num_files_array = explode(",", $num_files_array);
 		$result_count = count($num_files_array);
-		print_r($num_files_array);
-		print_r($result_count);
-		// $ds = DIRECTORY_SEPARATOR;  // Store directory separator (DIRECTORY_SEPARATOR) to a simple variable. This is just a personal preference as we hate to type long variable name.
-		// $storeFolder = '../public/content';   // Declare a variable for destination folder.
+		
+
+
+	}
+
+	function upload_content() {
+
 		$storeFolder =  FCPATH.'public/content/';
 
 		if (!empty($_FILES)) {
 
 			// If file is sent to the page, store the file object to a temporary variable.
 			$tempFile = $_FILES['file']['tmp_name'];
-			print_r($tempFile);die; 
+			$data = $this->input->post();
+			
 			// Create the absolute path of the destination folder.
 			$targetPath = $storeFolder;
 			// var_dump($targetPath);die; 
 
 			// Adding timestamp with image's name so that files with same name can be uploaded easily.
 			$date = new DateTime();
-			$newFileName = date("DMjGisY")."".rand(1000,9999).$_FILES['file']['name'];
+			$newFileName = date("DMjGisY")."_".$_FILES['file']['name'];
 			$targetFile =  $targetPath.$newFileName; // Create the absolute path of the uploaded file destination.
 			$FileType = pathinfo($targetFile,PATHINFO_EXTENSION);
+
 			//
+			/*
 			if($result_count >= 3){
 			header("HTTP/1.0 404 Not Found");
 			die();
 			}
+			*/
+
 			//Check file size
 			if ($_FILES["file"]["size"] > 21534336) {
 			header("HTTP/1.0 404 Not Found");
@@ -86,7 +96,19 @@ class Upload extends CI_Controller
 			header("HTTP/1.0 404 Not Found");
 			exit();
 			}
+			// print_r(move_uploaded_file($tempFile,$targetFile));
+			
 			//move_uploaded_file($tempFile,$targetFile); // Move uploaded file to destination.
+			if (move_uploaded_file($tempFile,$targetFile)){
+				$data['filename'] = $newFileName.',';
+			}
+
+			// print_r($data);
+			// die;
+			$this->db->insert('myproducts', $data);
+			
+			/*untuk update data
+			$pid = 2;
 			// Add product  array to database
 			if (move_uploaded_file($tempFile,$targetFile)){
 				$newFileNamedb = $newFileName.',';
@@ -107,6 +129,8 @@ class Upload extends CI_Controller
 				 } else {
 					 $p_array2 = $newFileNamedb;
 				 }
+
+			 	
 				try{
 				$stmt = "UPDATE `myproducts` 
 								SET  filename = ?
@@ -128,6 +152,8 @@ class Upload extends CI_Controller
 			echo "Error uploading file";
 
 			}
+
+			untuk update data */
 		}
 
 	}

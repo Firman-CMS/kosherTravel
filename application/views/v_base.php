@@ -25,21 +25,22 @@
         <link href="<?php echo base_url('assets/css/skins/_all-skins.min.css'); ?>" rel="stylesheet" type="text/css" />
 
         <?php if($menu == 'Content' ) {?>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/dropzone.min.css') ?>">
-         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/basic.min.css') ?>">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+        
+        <!-- Optional theme -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+        <link href="<?php echo base_url('assets/css/dropzone2.css'); ?>" rel="stylesheet" type="text/css">
+        <!-- <link rel="stylesheet" type="text/css" href="<?php# echo base_url('assets/dropzone.min.css') ?>"> -->
+         <!-- <link rel="stylesheet" type="text/css" href="<?php# echo base_url('assets/basic.min.css') ?>"> -->
 
-         <script type="text/javascript" src="<?php echo base_url('assets/jquery.js') ?>"></script>
-         <script type="text/javascript" src="<?php echo base_url('assets/dropzone.min.js') ?>"></script>
+         <!-- <script type="text/javascript" src="<?php# echo base_url('assets/jquery.js') ?>"></script> -->
+         <!-- <script type="text/javascript" src="<?php #echo base_url('assets/dropzone.min.js') ?>"></script> -->
 
-         <style type="text/css">
-             body{
-                 background-color: #E8E9EC;
-             }
-             .dropzone {
-                 margin-top: 40px;
-                 border: 2px dashed #0087F7;
-             }
-         </style>
+         <style>
+            .btn {
+                cursor: pointer;
+            }
+            </style>
        <?php }?>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -235,10 +236,10 @@
                         </li>
 
                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> Documentation</a></li>
-                        
-                        <li class="active"><a href="<?php echo base_url();?>user"><i class="fa fa-book"></i> Add New User</a>
-                        </li>
                         */ ?>
+                        <li <?php $active = $menu == 'Content' ? 'active' : ''; echo $active; ?> ><a href="<?php echo base_url();?>upload"><i class="fa fa-book"></i> Content </a>
+                        </li>
+                        
                         <li class="treeview <?php $active = $menu == 'Message' ? 'active' : ''; echo $active; ?>">
                             <a href="#">
                                 <i class="fa fa-envelope"></i> <span>Message</span>
@@ -259,6 +260,17 @@
                                 <li><a href="<?php echo base_url();?>user"><i class="fa fa-circle-o"></i> List User </a></li>
                                 <li><a href="<?php echo base_url();?>user/newUser"><i class="fa fa-circle-o"></i> Add New User </a></li>
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php $active = $menu == 'Menu' ? 'active' : ''; echo $active; ?>">
+                            <a href="#">
+                                <i class="fa fa-table"></i> <span>Menu</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>menu"><i class="fa fa-circle-o"></i> Parent Menu </a></li>
+                                <li><a href="<?php echo base_url();?>menu/newMenu"><i class="fa fa-circle-o"></i> Add New Menu </a></li>
+                                <li><a href="<?php echo base_url();?>menu/list_menu"><i class="fa fa-circle-o"></i> List Menu</a></li>
                             </ul>
                         </li>
 
