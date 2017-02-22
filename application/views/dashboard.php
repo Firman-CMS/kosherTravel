@@ -18,7 +18,7 @@
         <link href="<?php echo base_url('assets/js/plugins/daterangepicker/daterangepicker-bs3.css'); ?>" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="<?php echo base_url('assets/css/AdminLTE.min.css'); ?>" rel="stylesheet" type="text/css" />
-        <!-- AdminLTE Skins. Choose a skin from the css/skins 
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link href="<?php echo base_url('assets/css/skins/_all-skins.min.css'); ?>" rel="stylesheet" type="text/css" />
 
@@ -715,6 +715,7 @@
                                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                                     </div>
                                 </div><!-- /.box-header -->
+                                <?php /*
                                 <div class="box-body">
                                     <!-- Conversations are loaded here -->
                                     <div class="direct-chat-messages">
@@ -847,6 +848,7 @@
                                         </ul><!-- /.contatcts-list -->
                                     </div><!-- /.direct-chat-pane -->
                                 </div><!-- /.box-body -->
+                                */ ?>
                                 <div class="box-footer">
                                     <form action="#" method="post">
                                         <div class="input-group">
@@ -861,6 +863,7 @@
                         </div><!-- /.col -->
                         <div class='col-md-4'>
                             <!-- USERS LIST -->
+                            <?php /*
                             <div class="box box-danger">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Latest Members</h3>
@@ -918,6 +921,7 @@
                                     <a href="javascript::" class="uppercase">View All Users</a>
                                 </div><!-- /.box-footer -->
                             </div><!--/.box -->
+                            */ ?>
                         </div><!-- /.col -->
                         <div class='col-md-4'>
                             <div class="box box-default">
@@ -1138,6 +1142,6 @@
         <script src="<?php echo base_url('assets/js/AdminLTE/dashboard2.js'); ?>" type="text/javascript"></script>
 
         <!-- AdminLTE for demo purposes -->
-        <script src="<?php echo base_url('assets/js/AdminLTE/demo.js'); ?>"></script> 
+        <script src="<?php echo base_url('assets/js/AdminLTE/demo.js'); ?>"></script>
     </body>
 </html>

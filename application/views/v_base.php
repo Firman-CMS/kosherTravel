@@ -26,15 +26,15 @@
 
         <?php if($menu == 'Content' ) {?>
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-        
+
         <!-- Optional theme -->
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
         <link href="<?php echo base_url('assets/css/dropzone2.css'); ?>" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="<?php# echo base_url('assets/dropzone.min.css') ?>"> -->
          <!-- <link rel="stylesheet" type="text/css" href="<?php# echo base_url('assets/basic.min.css') ?>"> -->
 
-         <!-- <script type="text/javascript" src="<?php# echo base_url('assets/jquery.js') ?>"></script> -->
-         <!-- <script type="text/javascript" src="<?php #echo base_url('assets/dropzone.min.js') ?>"></script> -->
+         <!-- <script type="text/javascript" src="<?php# echo base_url('assets/js/jquery.js') ?>"></script> -->
+         <!-- <script type="text/javascript" src="<?php# echo base_url('assets/dropzone.min.js') ?>"></script> -->
 
          <style>
             .btn {
@@ -237,9 +237,21 @@
 
                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> Documentation</a></li>
                         */ ?>
-                        <li <?php $active = $menu == 'Content' ? 'active' : ''; echo $active; ?> ><a href="<?php echo base_url();?>upload"><i class="fa fa-book"></i> Content </a>
+                        <!-- <li <?php# $active = $menu == 'Content' ? 'active' : ''; echo $active; ?> ><a href="<?php echo base_url();?>upload"><i class="fa fa-book"></i> Content </a>
+                        </li> -->
+
+                        <li class="treeview <?php $active = $menu == 'Content' ? 'active' : ''; echo $active; ?>">
+                            <a href="#">
+                                <i class="fa fa-book"></i> <span>Content</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                             </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>contents/newContent"><i class="fa fa-circle-o"></i> Add New Content</a></li>
+                                <li><a href="<?php echo base_url();?>contents/listContent"><i class="fa fa-circle-o"></i> list Content </a></li>
+                                <li><a href="<?php echo base_url();?>contents"><i class="fa fa-circle-o"></i> Add New </a></li>
+                            </ul>
                         </li>
-                        
+
                         <li class="treeview <?php $active = $menu == 'Message' ? 'active' : ''; echo $active; ?>">
                             <a href="#">
                                 <i class="fa fa-envelope"></i> <span>Message</span>
@@ -259,7 +271,6 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>user"><i class="fa fa-circle-o"></i> List User </a></li>
                                 <li><a href="<?php echo base_url();?>user/newUser"><i class="fa fa-circle-o"></i> Add New User </a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php $active = $menu == 'Menu' ? 'active' : ''; echo $active; ?>">
@@ -269,8 +280,8 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>menu"><i class="fa fa-circle-o"></i> Parent Menu </a></li>
-                                <li><a href="<?php echo base_url();?>menu/newMenu"><i class="fa fa-circle-o"></i> Add New Menu </a></li>
-                                <li><a href="<?php echo base_url();?>menu/list_menu"><i class="fa fa-circle-o"></i> List Menu</a></li>
+                                <!-- <li><a href="<?php# echo base_url();?>menu/newMenu"><i class="fa fa-circle-o"></i> Add New Menu </a></li> -->
+                                <li><a href="<?php echo base_url();?>menu/list_menu"><i class="fa fa-circle-o"></i> List All Menu</a></li>
                             </ul>
                         </li>
 
@@ -292,7 +303,7 @@
                             <strong>Warning!</strong>
                             <?php echo validation_errors(); ?>
                             <?php echo $this->session->flashdata('result_login'); ?>
-                        </div>    
+                        </div>
                     <?php }*/ ?>
 
                 <?php
@@ -303,7 +314,7 @@
                             <?php echo validation_errors(); ?>
                             <?php echo $this->session->flashdata('result_notif'); ?>
                 </a>
-                
+
                 </div>
                 <?php } ?>
                <section class="content-header">
@@ -337,15 +348,15 @@
         <script src="<?php echo base_url('assets/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('assets/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'); ?>" type="text/javascript"></script>
         <!-- daterangepicker -->
-        <script src="<?php echo base_url('assets/js/plugins/daterangepicker/daterangepicker.js'); ?>" type="text/javascript"></script>
+        <!-- <script src="<?php# echo base_url('assets/js/plugins/daterangepicker/daterangepicker.js'); ?>" type="text/javascript"></script> -->
         <!-- datepicker -->
-        <script src="<?php echo base_url('assets/js/plugins/datepicker/bootstrap-datepicker.js'); ?>" type="text/javascript"></script>
+        <!-- <script src="<?php# echo base_url('assets/js/plugins/datepicker/bootstrap-datepicker.js'); ?>" type="text/javascript"></script> -->
         <!-- iCheck -->
         <script src="<?php echo base_url('assets/js/plugins/iCheck/icheck.min.js'); ?>" type="text/javascript"></script>
         <!-- SlimScroll 1.3.0 -->
         <script src="<?php echo base_url('assets/js/plugins/slimScroll/jquery.slimscroll.min.js'); ?>" type="text/javascript"></script>
         <!-- ChartJS 1.0.1 -->
-        <script src="<?php echo base_url('assets/js/plugins/chartjs/Chart.min.js'); ?>" type="text/javascript"></script>
+        <!-- <script src="<?php# echo base_url('assets/js/plugins/chartjs/Chart.min.js'); ?>" type="text/javascript"></script> -->
 
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <!-- <script src="<?php echo base_url('assets/js/AdminLTE/dashboard2.js'); ?>" type="text/javascript"></script> -->

@@ -6,7 +6,7 @@
 
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">List Parent Menu</h3>
+          <h3 class="box-title">List All Menu</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -14,7 +14,7 @@
           <div class="row">
             <div class="col-sm-6">
             <div class="dataTables_length" id="example1_length">
-              <a href="<?php echo base_url() . "menu/addNewParent/"?>" class="btn btn-sm btn-success">Add New Parent Menu</a>
+              <a href="<?php echo base_url() . "menu/newMenu"?>" class="btn btn-sm btn-success">Add New Menu</a>
             </div>
             </div>
           </div><br>
@@ -34,13 +34,13 @@
             <?php
             foreach ($data as $item) { ?>
             <tr role="row" class="<?php $b = ($item['id'] % 2) == 0 ? 'even' : 'odd'; echo $b;?>">
-              <td><img src="<?php echo base_url().menu_img().$item['image']?>" alt="<?php echo $item['name'] ?>" class="img-rounded"></td>
+              <td><img src="<?php echo base_url().menu_img().$item['image']?>" alt="<?php echo $item['name'] ?>" class="img-rounded" height="50" width="140"></td>
               <td class="sorting_1"><?php echo $item['name'] ?></td>
               <td class="sorting_1"><?php echo $item['parent_menu'] ?></td>
               <td><?php echo $item['created_at'] ?></td>
               <td>
-              <a href="<?php echo base_url() . "menu/editMenuparent/" . $item['id']; ?>" class="btn btn-sm btn-success">Edit</a>
-              <a href="<?php echo base_url() . "menu/del_Parent/" . $item['id']; ?>" class="btn btn-sm btn-danger" onClick="return confirm('Are you sure you want to delete?')">Del</a>
+              <a href="<?php echo base_url() . "menu/editMenu/" . $item['id']; ?>" class="btn btn-sm btn-success">Edit</a>
+              <a href="<?php echo base_url() . "menu/del_menu/" . $item['id']; ?>" class="btn btn-sm btn-danger" onClick="return confirm('Are you sure you want to delete?')">Del</a>
               </td>
             </tr>
             <?php } ?>

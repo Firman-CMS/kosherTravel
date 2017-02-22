@@ -43,14 +43,47 @@ class Menu extends CI_Controller {
 
 
 	public function add_new_parent(){
+		//  phpinfo();
 		$this->form_validation->set_rules('name', 'name', 'required|trim|xss_clean');
 
       if($this->form_validation->run() == FALSE) {
       	$this->session->set_flashdata('result_notif', validation_errors() );
           header('location:'. base_url('menu/addNewParent'));
       }else {
-			$data['name']	= $this->input->post('name');
+			/* config upload image */
+			$config['upload_path'] = './public/menu/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']	= '5000'; #kB #/1000 MB
+			$config['max_width']  = '1920';
+			$config['max_height']  = '1080';
+				#upload original image
+			$this->load->library('upload', $config);
 
+			if ( ! $this->upload->do_upload()) { /*if upload failed*/
+				$this->session->set_flashdata('result_notif', $this->upload->display_errors());
+				header('location:'. base_url('menu/addNewParent'));
+			}
+
+			$image_data = $this->upload->data();
+			#upload thumb image
+			$config2 = array(
+				'image_library' 		=> 'gd',
+				'source_image'      => $image_data['full_path'], //path to the uploaded image
+				'new_image'         => './public/menu/thumb', //path to
+				'maintain_ratio'    => true,
+				'width'             => 720,
+				'height'            => 405
+			);
+			$this->load->library('image_lib',$config2);
+			if ( ! $this->image_lib->resize()) { /*if upload thumb failed*/
+				$this->session->set_flashdata('result_notif', $this->image_lib->display_errors());
+				header('location:'. base_url('menu/addNewParent'));
+			}
+
+			$data['background']	= $image_data['file_name'];
+			$data['name']			= $this->input->post('name');
+
+			// print_r($data);
 			$this->m_menu->save_new_parent($data);
 		}
 	}
@@ -59,7 +92,6 @@ class Menu extends CI_Controller {
 		if($this->session->userdata('is_admin') != 1){
 			$this->session->set_flashdata('result_notif', 'You are not authorized to access edit user, Please Login as Admin');
 			header('location:'. base_url('menu'));
-			// redirect('cms','refresh');
 		}
 		$data['menu']	= 'Menu';
 		$data['title'] = 'Edit Menu Parent';
@@ -71,21 +103,127 @@ class Menu extends CI_Controller {
 		$this->load->view('v_base', $data);
 	}
 
+	public function editMenu($id){
+		if($this->session->userdata('is_admin') != 1){
+			$this->session->set_flashdata('result_notif', 'You are not authorized to access edit user, Please Login as Admin');
+			header('location:'. base_url('menu/newMenu'));
+		}
+		$data['menu']	= 'Menu';
+		$data['title'] = 'Edit Menu';
+		$data['notif_message'] = $this->countNotifMessage();
+
+		$mainContent['data'] = $this->m_menu->getByidMenu($id);
+		$idParent = $mainContent['data'][0]['id_parrent'];
+		$mainContent['menu'] = $this->m_menu->getParentMenuid($idParent);
+		// print_r($mainContent);die;
+		$data['content'] = $this->load->view('menu/v_edit_menu' , $mainContent, true);
+		$this->load->view('v_base', $data);
+	}
+
 
 	public function edit_new_parent(){
 		$this->form_validation->set_rules('name', 'name', 'required|trim|xss_clean');
+		$this->form_validation->set_rules('userfile', 'userfile', 'required|trim|xss_clean');
 
       if($this->form_validation->run() == FALSE) {
       	$this->session->set_flashdata('result_notif', validation_errors() );
           header('location:'. base_url('menu/addNewParent'));
       }else {
+			/* config upload image */
+			if(empty($_FILES['userfile']['name'])){ /* if empty file*/
+				$data['background']	= $this->input->post('background');
+			}else {
+				$config['upload_path'] = './public/menu/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size']	= '5000'; #kB #/1000 MB
+				$config['max_width']  = '1920';
+				$config['max_height']  = '1080';
+					#upload original image
+				$this->load->library('upload', $config);
+
+				if ( ! $this->upload->do_upload()) { /*if upload failed*/
+					$this->session->set_flashdata('result_notif', $this->upload->display_errors());
+					header('location:'. base_url('menu/addNewParent'));
+				}
+
+				$image_data = $this->upload->data();
+
+				#upload thumb image
+				$config2 = array(
+					'image_library' 		=> 'gd',
+					'source_image'      => $image_data['full_path'], //path to the uploaded image
+					'new_image'         => './public/menu/thumb', //path to
+					'maintain_ratio'    => true,
+					'width'             => 720,
+					'height'            => 405
+				);
+				$this->load->library('image_lib',$config2);
+				if ( ! $this->image_lib->resize()) { /*if upload thumb failed*/
+					$this->session->set_flashdata('result_notif', $this->image_lib->display_errors());
+					header('location:'. base_url('menu/addNewParent'));
+				}
+
+				$data['background']	= $image_data['file_name'];
+			}
+
 			$data['name']	= $this->input->post('name');
 			$id	= $this->input->post('id');
-			print_r($data);
+
 			$this->m_menu->update_parent($data, $id);
 		}
 	}
 
+	public function edit_menu()
+	{
+		$this->form_validation->set_rules('name', 'name', 'required|trim|xss_clean');
+		$this->form_validation->set_rules('description', 'description', 'required|trim|xss_clean');
+
+      if($this->form_validation->run() == FALSE) {
+      	$this->session->set_flashdata('result_notif', validation_errors() );
+          header('location:'. base_url('menu/newMenu'));
+      }else {
+			if(empty($_FILES['userfile']['name'])){ /* if empty file*/
+				$data['image']	= $this->input->post('image');
+			}else {
+				/* config upload image */
+				$config['upload_path'] = './public/menu/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size']	= '1000'; #kB
+				$config['max_width']  = '400';
+				$config['max_height']  = '100';
+					#upload original image
+				$this->load->library('upload', $config);
+
+				if ( ! $this->upload->do_upload()) { /*if upload failed*/
+					$this->session->set_flashdata('result_notif', $this->upload->display_errors());
+					header('location:'. base_url('menu/newMenu'));
+				}
+
+				$image_data = $this->upload->data();
+				#upload thumb image
+				$config2 = array(
+					'image_library' 		=> 'gd',
+					'source_image'      => $image_data['full_path'], //path to the uploaded image
+					'new_image'         => './public/menu/thumb', //path to
+					'maintain_ratio'    => true,
+					'width'             => 100,
+					'height'            => 75
+				);
+				$this->load->library('image_lib',$config2);
+				if ( ! $this->image_lib->resize()) { /*if upload thumb failed*/
+					$this->session->set_flashdata('result_notif', $this->image_lib->display_errors());
+					header('location:'. base_url('menu/newMenu'));
+				}
+				$data['image']			= $image_data['file_name'];
+			}
+				$data['name']			= $this->input->post('name');
+				$data['description']	= $this->input->post('description');
+				$data['id_parent']	= $this->input->post('id_parent');
+				$id	= $this->input->post('id');
+				// print_r($data);
+				$this->m_menu->update_menu($data, $id);
+		}
+	}
 
 	public function del_Parent($id){
 		if($this->session->userdata('is_admin') != 1){
@@ -93,14 +231,16 @@ class Menu extends CI_Controller {
 			header('location:'. base_url('menu'));
 			// redirect('cms','refresh');
 		}
-		// $data['menu']	= 'Menu';
-		// $data['title'] = 'Edit Menu Parent';
-		// $data['notif_message'] = $this->countNotifMessage();
-
 		$this->m_menu->del_parent($id);
+	}
 
-		// $data['content'] = $this->load->view('menu/v_edit_parent' , $mainContent, true);
-		// $this->load->view('v_base', $data);
+	public function del_menu($id){
+		if($this->session->userdata('is_admin') != 1){
+			$this->session->set_flashdata('result_notif', 'You are not authorized to access delete menu, Please Login as Admin');
+			header('location:'. base_url('menu/list_menu'));
+			// redirect('cms','refresh');
+		}
+		$this->m_menu->del_menu($id);
 	}
 
 
@@ -126,9 +266,9 @@ class Menu extends CI_Controller {
 			/* config upload image */
 			$config['upload_path'] = './public/menu/';
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size']	= '500'; #kB
-			$config['max_width']  = '1024';
-			$config['max_height']  = '768';
+			$config['max_size']	= '1000'; #kB
+			$config['max_width']  = '400';
+			$config['max_height']  = '100';
 				#upload original image
 			$this->load->library('upload', $config);
 
@@ -144,8 +284,8 @@ class Menu extends CI_Controller {
 				'source_image'      => $image_data['full_path'], //path to the uploaded image
 				'new_image'         => './public/menu/thumb', //path to
 				'maintain_ratio'    => true,
-				'width'             => 480,
-				'height'            => 268
+				'width'             => 100,
+				'height'            => 75
 			);
 			$this->load->library('image_lib',$config2);
 			if ( ! $this->image_lib->resize()) { /*if upload thumb failed*/
@@ -177,6 +317,12 @@ class Menu extends CI_Controller {
 		$this->load->model(array('m_message'));
 		$data = $this->m_message->countNotif();
 		return $data;
+	}
+
+	function getSubMenu(){
+		$id = $_GET['id'];
+		$data = $this->m_menu->getSubMenu($id);
+		echo $data;
 	}
 
 

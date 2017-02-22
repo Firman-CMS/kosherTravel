@@ -262,6 +262,7 @@
                             <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div><!-- /.box-header -->
+                    <? /*
                     <div class="box-body">
                         <!-- Conversations are loaded here -->
                         <div class="direct-chat-messages">
@@ -314,8 +315,8 @@
                             </div><!-- /.direct-chat-msg -->
 
                         </div><!--/.direct-chat-messages-->
-
-
+                        */ ?>
+                        <?php /*
                         <!-- Contacts are loaded here -->
                         <div class="direct-chat-contacts">
                             <ul class='contacts-list'>
@@ -393,6 +394,7 @@
                                 </li><!-- End Contact Item -->
                             </ul><!-- /.contatcts-list -->
                         </div><!-- /.direct-chat-pane -->
+                        */ ?>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <form action="#" method="post">
@@ -417,6 +419,7 @@
                             <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div><!-- /.box-header -->
+                    <?php /*
                     <div class="box-body no-padding">
                         <ul class="users-list clearfix">
                             <li>
@@ -461,6 +464,7 @@
                             </li>
                         </ul><!-- /.users-list -->
                     </div><!-- /.box-body -->
+                    */ ?>
                     <div class="box-footer text-center">
                         <a href="javascript::" class="uppercase">View All Users</a>
                     </div><!-- /.box-footer -->
@@ -590,6 +594,7 @@
                             <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div><!-- /.box-header -->
+                    <?php /*
                     <div class="box-body">
                         <ul class="products-list product-list-in-box">
                             <li class="item">
@@ -638,6 +643,7 @@
                             </li><!-- /.item -->
                         </ul>
                     </div><!-- /.box-body -->
+                    */?>
                     <div class="box-footer text-center">
                         <a href="javascript::;" class="uppercase">View All Products</a>
                     </div><!-- /.box-footer -->
