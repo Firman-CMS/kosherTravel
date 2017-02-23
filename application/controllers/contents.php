@@ -234,6 +234,15 @@ class Contents extends CI_Controller
 
 	}
 
+	function setPublish() {
+
+	}
+
+	function setNotpublish(){
+		$id = intval($_GET["id"]);
+		$this->m_content->set_publish($id); 
+	}
+
 	function getContentimage() {
 		$id = intval($_GET["id"]);
 		$data = $this->m_content->get_contentImage($id);
