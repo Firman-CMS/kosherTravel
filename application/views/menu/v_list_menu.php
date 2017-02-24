@@ -33,12 +33,12 @@
                 <?php
                 foreach ($data as $item) { ?>
                 <tr role="row" class="<?php $b = ($item->id % 2) == 0 ? 'even' : 'odd'; echo $b;?>">
-                  <td><img src="<?php echo base_url().menu_img().$item->background?>" alt="<?php echo $item->name ?>" class="img-rounded" height="100" width="280"></td> 
+                  <td><img src="<?php echo base_url().menu_img().$item->background?>" alt="<?php echo $item->name ?>" class="img-rounded" height="100" width="280"></td>
                   <td class="sorting_1"><?php echo $item->name ?></td>
                   <td><?php echo $item->created_at ?></td>
                   <td>
                   <a href="<?php echo base_url() . "menu/editMenuparent/" . $item->id; ?>" class="btn btn-sm btn-success">Edit</a>
-                  <a href="<?php echo base_url() . "menu/del_Parent/" . $item->id; ?>" class="btn btn-sm btn-danger" onClick="return confirm('Are you sure you want to delete?')">Del</a>
+                  <a href="<?php echo base_url() . "menu/del_Parent/" . $item->id; ?>" class="btn btn-sm btn-danger" onClick="return confirm('Are you sure want to permanently delete ?')">Del</a>
                   </td>
                 </tr>
                 <?php } ?>

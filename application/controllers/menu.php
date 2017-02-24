@@ -325,6 +325,13 @@ class Menu extends CI_Controller {
 		echo $data;
 	}
 
+	function getSubMenu_(){
+		$id = $_GET['id'];
+		$id_sub = $_GET['id_sub'];
+		$data = $this->m_menu->getSubMenu_($id, $id_sub);
+		echo $data;
+	}
+
 
 	/*
 	public function edit($id){

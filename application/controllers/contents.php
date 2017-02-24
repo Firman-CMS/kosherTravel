@@ -27,9 +27,9 @@ class Contents extends CI_Controller
 		$data['title'] 			= 'New Content';
 		$data['notif_message'] 	= $this->countNotifMessage();
 
-		$mainContent['menu'] = $this->m_menu->getParentMenu();
+		$mainContent['data'] = $this->m_content->getListContent();
 
-		$data['content'] 	= $this->load->view('contents/v_new_contents' , $mainContent, true);
+		$data['content'] 	= $this->load->view('contents/v_list_contents' , $mainContent, true);
 		$this->load->view('v_base', $data);
 
 	}
@@ -44,14 +44,12 @@ class Contents extends CI_Controller
 
 		$data['content'] 	= $this->load->view('contents/v_new_contents' , $mainContent, true);
 		$this->load->view('v_base', $data);
-
 	}
 
 	function actionSave() {
 		$data = $this->input->post();
 		$this->m_content->action_save($data);
 	}
-
 
 	function listContent() {
 		$data['menu']				= 'Content';
@@ -62,7 +60,6 @@ class Contents extends CI_Controller
 		// print_r($mainContent);die;
 		$data['content'] 	= $this->load->view('contents/v_list_contents' , $mainContent, true);
 		$this->load->view('v_base', $data);
-
 	}
 
 	function contentImage() {
@@ -234,19 +231,70 @@ class Contents extends CI_Controller
 
 	}
 
-	function setPublish() {
-
+	function setPublish($id) {
+		$this->m_content->set_publish($id);
 	}
 
-	function setNotpublish(){
-		$id = intval($_GET["id"]);
-		$this->m_content->set_publish($id); 
+	function setNotpublish($id){
+		$this->m_content->set_Notpublish($id);
 	}
 
 	function getContentimage() {
 		$id = intval($_GET["id"]);
 		$data = $this->m_content->get_contentImage($id);
 		echo $data;
+	}
+
+	function editContent($id) {
+		if($this->session->userdata('is_admin') != 1){
+			$this->session->set_flashdata('result_notif', 'You are not authorized to access it, Please Login as Admin');
+			header('location:'. base_url('contents'));
+		}else {
+			$data['menu']			= 'Content';
+			$data['title'] 			= 'New Content';
+			$data['notif_message'] 	= $this->countNotifMessage();
+
+			$mainContent['data'] = $this->m_content->getContentById($id);
+			$mainContent['menu'] = $this->m_menu->getParentMenu_();
+			// print_r($mainContent);die;
+			$data['content'] 	= $this->load->view('contents/v_edit_contents' , $mainContent, true);
+			$this->load->view('v_base', $data);
+		}
+	}
+
+	function actionSaveEdit() {
+		$data = $this->input->post();
+		// print_r($data);die;
+		$this->m_content->save_editContent($data);
+	}
+
+	function delContent($id) {
+		if($this->session->userdata('is_admin') != 1){
+			$this->session->set_flashdata('result_notif', 'You are not authorized to access it, Please Login as Admin');
+			header('location:'. base_url('contents'));
+		}else {
+			$this->m_content->del_content($id);
+		}
+
+	}
+
+	function contact(){
+		// echo CI_VERSION;
+		$data['menu']				= 'Content';
+		$data['title'] 			= 'Contact Us';
+		$data['notif_message'] 	= $this->countNotifMessage();
+
+		$mainContent['data'] = $this->m_content->getContactUs();
+		// print_r($mainContent);
+		// die;
+		$data['content'] 	= $this->load->view('contents/v_contact' , $mainContent, true);
+		$this->load->view('v_base', $data);
+	}
+
+	function SaveContact() {
+		$data = $this->input->post();
+		// print_r($data);die;
+		$this->m_content->save_contact($data);
 	}
 
 /*

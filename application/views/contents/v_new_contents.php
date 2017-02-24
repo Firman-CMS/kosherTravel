@@ -64,13 +64,14 @@
       </div>
     </section>
 <script>
+var BASE_URL = "<?php echo base_url();?>";
  $(document).ready(function() {
     $("#id_parent").change(function(){
         $('#loadingimg').html('loading...');
         $("#loadingimg").show();
         $.ajax({
           type: 'GET',
-          url: 'menu/getSubMenu',
+          url: BASE_URL+'menu/getSubMenu',
           data:  { "id" : $('#id_parent').val()},
           success: function (response){
             document.getElementById("submenu").innerHTML=response;

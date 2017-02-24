@@ -164,6 +164,23 @@ class M_menu extends CI_Model {
         return $listmenu;
      }
 
+     function getParentMenu_() {
+         $this->db->select("id, name");
+         $this->db->from("parent_menu");
+         $this->db->order_by("id", "ASC");
+         $query = $this->db->get();
+         $data = $query->result();
+
+         // $listmenu = '<select class="form-control" name="id_parent" id="id_parent" required>';
+         // $listmenu .= '<option value="" disabled selected>Select Parent Menu</option>';
+         // foreach ($data as $value ) {
+         //     $listmenu .= '<option value="'.$value->id.'">'.$value->name.'</option>';
+         // }
+         // $listmenu .= '</select>';
+
+         return $data;
+      }
+
     function getParentMenuid($id) {
         $this->db->from("parent_menu");
         $this->db->order_by("id", "ASC");
@@ -195,6 +212,24 @@ class M_menu extends CI_Model {
       //   echo $listmenu;
         return $listmenu;
      }
+
+     function getSubMenu_($idParet, $idSubmenu) {
+         $this->db->select("id, name");
+         $this->db->from("menu");
+         $this->db->order_by("id", "ASC");
+         $this->db->where("id_parent", $idParet);
+         $query = $this->db->get();
+         $data = $query->result();
+
+         $listmenu = '<select class="form-control" name="submenu_id" id="submenu_id" required>';
+         foreach ($data as $value ) {
+            $role = $value->id == $idSubmenu ? 'selected=' : '';
+           $listmenu .= '<option value="'.$value->id.'" '.$role.'>'.$value->name.'</option>';
+         }
+         $listmenu .= '</select>';
+
+         return $listmenu;
+      }
 
     function getAllmenu(){
       $this->db->select("menu.id, menu.image image, menu.name name, parent_menu.name parent_menu, menu.created_at created_at");

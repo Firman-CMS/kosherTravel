@@ -33,7 +33,7 @@
         <!-- <link rel="stylesheet" type="text/css" href="<?php# echo base_url('assets/dropzone.min.css') ?>"> -->
          <!-- <link rel="stylesheet" type="text/css" href="<?php# echo base_url('assets/basic.min.css') ?>"> -->
 
-         <!-- <script type="text/javascript" src="<?php# echo base_url('assets/js/jquery.js') ?>"></script> -->
+         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
          <!-- <script type="text/javascript" src="<?php# echo base_url('assets/dropzone.min.js') ?>"></script> -->
 
          <style>

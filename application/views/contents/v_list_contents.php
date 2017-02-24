@@ -49,14 +49,14 @@
               </td>
               <td>
                 <?php if($item['status'] == 1) { ?>
-                  <a href="<?php echo base_url() . ""?>" class="btn btn-sm btn-success" onClick="return confirm('Are you sure want to Not Publish this content ?')">Publish</a>
+                  <a href="<?php echo base_url() . "contents/setNotpublish/" . $item['id'];?>" class="btn btn-sm btn-success" onClick="return confirm('Are you sure want to Not Publish this content ?')">Publish</a>
                 <?php }else { ?>
-                  <a href="<?php echo base_url() . ""?>" class="btn btn-sm btn-warning" onClick="return confirm('Are you sure want to Publish this content ?')">Not Publish</a>
+                  <a href="<?php echo base_url() . "contents/setPublish/". $item['id'];?>" class="btn btn-sm btn-warning" onClick="return confirm('Are you sure want to Publish this content ?')">Not Publish</a>
                 <?php } ?>
               </td>
               <td>
-                <a href="<?php echo base_url() . "contents/contentImage/" . $item['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
-                <a href="<?php echo base_url() . "" . $item['id']; ?>" class="btn btn-sm btn-danger" onClick="return confirm('Are you sure you want to delete?')">Del</a>
+                <a href="<?php echo base_url() . "contents/editContent/" . $item['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                <a href="<?php echo base_url() . "contents/delContent/" . $item['id']; ?>" class="btn btn-sm btn-danger" onClick="return confirm('Are you sure want to permanently delete?')">Del</a>
               </td>
             </tr>
             <?php } ?>
