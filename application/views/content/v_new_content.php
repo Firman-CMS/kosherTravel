@@ -3,11 +3,11 @@
 	<div class="row">
       <div class="col-md-12">
       	<div class="box">
-				<div class="box box-primary">
+			<div class="box box-primary">
             <div class="box-header with-border">
             <h3 class="box-title">Add New User</h3>
             </div>
-              <form role="form" action="http://localhost/koshertravel/message/testNew_process" method="POST">
+              <form role="form" action="<?php echo base_url();?>upload/proses_upload" method="POST">
 					<div class="dropzone">
 
 					  <div class="dz-message">
@@ -51,10 +51,38 @@
 
 
 			<script type="text/javascript">
+			Dropzone.autoDiscover = false;
+			  var myDropzone = new Dropzone(".dropzone",{
+			    url: 'someurl/test',
+			    method:"post",
+				acceptedFiles:"image/*",
+				paramName:"userfile",
+			    autoProcessQueue:false,
+			    addRemoveLinks:true,
+			    uploadMultiple: true,
+			    parallelUploads:10,
+			    });
+			
+			  var myDropzone = new Dropzone("#dasasropzone", { 
+			    url: 'someurl/test',
+			    method:"post",
+				acceptedFiles:"image/*",
+				paramName:"userfile",
+			    autoProcessQueue:false,
+			    addRemoveLinks:true,
+			  });
 
+			  $('#btn').on('click',function(e){
+			    e.preventDefault();
+			    myDropzone.processQueue();  
+			  });   
+			
+			/*	
 			Dropzone.autoDiscover = false;
 
+
 			var foto_upload= new Dropzone(".dropzone",{
+				autoProcessQueue: false,
 			url: " ",
 			maxFilesize: 2,
 			method:"post",
@@ -78,7 +106,7 @@
 				$.ajax({
 					type:"post",
 					data:{token:token},
-					url:"<?php echo base_url('index.php/upload/remove_foto') ?>",
+					url:"<?php# echo base_url('upload/remove_foto') ?>",
 					cache:false,
 					dataType: 'json',
 					success: function(){
@@ -90,8 +118,8 @@
 					}
 				});
 			});
-
-
+			*/
+			
 			</script>
 			</div>
 		</div>

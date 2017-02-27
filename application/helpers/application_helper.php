@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 	function timeAgo($time)
 	{
 		/*
@@ -40,6 +40,11 @@
 	    return $y;
 	  }
 	}
-	
 
+	function menu_img(){
+		return 'public/menu/';
+	}
 
+	function menu_img_thumb(){
+		return 'public/menu/thumb/';
+	}
