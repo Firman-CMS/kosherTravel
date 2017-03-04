@@ -24,7 +24,7 @@
               <div class="form-group">
               <label for="image">Image Menu</label><br>
               <td><img src="<?php echo base_url().menu_img_thumb().$data[0]['image'] ?>" alt="<?php echo $data[0]['name'] ?>" class="img-rounded" height="50" width="140"></td></br>
-              <input type="file" name="userfile" size="20" placeholder="Image Menu" required>
+              <input type="file" name="userfile" size="20" placeholder="Image Menu">
               <small class="label pull-left bg-yellow">max size 1 MB (w: 400, h: 100)</small>
               <!-- <input id="email" name="email" class="form-control" placeholder="Enter email" type="email"> -->
               </div></br>

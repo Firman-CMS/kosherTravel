@@ -10,8 +10,8 @@ class Message extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		session_start();
-		ini_set('display_errors', 1);
-		
+		// ini_set('display_errors', 1);
+
 		if (empty($this->session->userdata('logged_in'))) {
 		      redirect('cms','refresh');
 		}
