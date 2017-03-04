@@ -48,3 +48,11 @@
 	function menu_img_thumb(){
 		return 'public/menu/thumb/';
 	}
+
+	function content_img(){
+		return 'public/content/';
+	}
+
+	function content_img_thumb(){
+		return 'public/content/thumb/';
+	}

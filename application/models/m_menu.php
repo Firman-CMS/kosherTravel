@@ -236,12 +236,47 @@ class M_menu extends CI_Model {
       $this->db->from("menu");
       $this->db->join("parent_menu", "menu.id_parent = parent_menu.id", "INNER");
       $this->db->order_by("parent_menu.id", "ASC");
+      $this->db->order_by("menu.id", "ASC");
       // $this->db->limit($offset,$start);
       $query = $this->db->get();
       $array = $query->result_array();
       // $query->free_result();
       unset($query);
       return $array;
+   }
+
+   function create_jsonSubMenu() {
+      $sql = "SELECT a.id, a.name, a.background, b.id idsubmenu, b.name submenu, b.image imagemenu
+               FROM parent_menu a
+               INNER JOIN menu b ON b.id_parent = a.id";
+      $query = $this->db->query($sql);
+      $result = $query->result();
+
+      $data = array();
+      if($this->db->affected_rows() > 0 ){
+          foreach ($result as $menuValue) {
+             $data[$menuValue->id][] = $menuValue;
+         }
+         print_r($data);
+         foreach ($data as $key => $value) {
+             $dataJson = $data[$key];
+            $json = json_encode($dataJson);
+            file_put_contents('./public/menujson_'.$key.'.json', $json);
+            // file_put_contents('./public/menujson_'.$key.'.json', $json, FILE_APPEND | LOCK_EX);
+         }
+
+      }
+   }
+
+   function create_jsonMenu() {
+      $sql = "select a.id, a.name, a.background from parent_menu a";
+      $query = $this->db->query($sql);
+      $result = $query->result();
+
+      if($this->db->affected_rows() > 0 ){
+            $json = json_encode($result);
+            file_put_contents('./public/menujson_.json', $json);
+      }
    }
 
 }

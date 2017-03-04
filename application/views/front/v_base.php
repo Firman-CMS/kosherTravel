@@ -30,7 +30,7 @@
     <link rel="image_src" href="https://cdn.okezone.com/www/2016/img/OKZ3.gif"/>
 
     <!-- styles -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" >
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>" >
     <link rel="stylesheet" href="<?php echo base_url('assets/css/styles.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/plugins.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/fonts.css'); ?>">
