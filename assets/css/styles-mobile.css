@@ -1,0 +1,1387 @@
+
+/*
+KosherCulinaryTravel
+@author : zuliansyah.c0de@gmail.com
+@url    : https://www.linkedin.com/in/ridho7zuliansyah
+*/
+
+* { margin: 0; padding: 0; }
+html {
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  font-family: 'Verdana';
+  margin: 0;
+  background: #f8f8f8;
+  overflow-x: hidden;
+}
+
+ .container {
+    margin: 0 auto;
+ }
+
+ .container-kosher{
+    width: 1060px;
+    margin: auto;
+}
+
+.container-kosher-thumb{
+    width: 975px;
+    margin: auto;
+}
+
+ .p-nol{
+    padding: 0 !important;
+ }
+
+ .m-nol{
+    margin: 0 !important;
+ }
+
+ .mb-t{
+    margin-bottom: 0 !important;
+ }
+
+.p-relative{
+    position: relative;
+}
+
+.bg-transparent{
+    background: transparent !important;
+}
+
+.bg-white{
+    background: #fff;
+}
+
+.overlay-body {
+    background: rgba(0,0,0,0.7);
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/*navbar*/
+.slideout-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 270px;
+    height: 100%;
+    background: #f1d186;
+    z-index: 9999;
+}
+
+.head-slideout {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding:0;
+    position: relative;
+}
+
+.img-logo-mobilenav {
+    background: url('../img/Logo_KCT_Ham(A).png');
+    width: 140px;
+    height: 33px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+}
+
+.img-close-mobile{
+    background: url('../img/Close_NavButton(A).png');
+    width: 37px;
+    height: 37px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+    background-size: 100%;
+}
+
+.toogle-right-mobilenav{
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.toogle-center-mobilenav {
+    display: inline-block;
+    position: relative;
+    top: 12px;
+}
+
+.body-slideout {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    padding: 0 15px;
+}
+
+
+.body-slideout ul li{
+    list-style: none;
+    width: 100%;
+    padding: 7px 0;
+    border-bottom: 1px solid#4B4A4A;
+}
+
+.body-slideout ul li a {
+    color: #4B4A4A;
+    font-size: 13px;
+}
+
+.footer-slideout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-slideout p{
+    text-align: center;
+    font-size: 9px;
+    margin-bottom: 25px;
+}
+
+/*Header*/
+
+.navbar-default.navbar-default-wix {
+    background-color: #f4f1ea;
+    border-color: #f4f1ea;
+    min-height: 50px;
+    padding: 6px 10px 0;
+}
+
+.navbar-body-wix {
+    text-align: center;
+}
+
+.navbar-toggle.navbar-toggle-wix {
+    border: 0;
+    float: left;
+    margin: 0;
+    padding: 0;
+    top: 7px;
+}
+
+.toggle-wix-mobile{
+    background: url('../img/Hamburger_Button_A.png');
+    width: 28px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+
+}
+
+.toogle-center-mobile {
+    display: inline-block;
+}
+
+
+.img-logo-mobile {
+    background: url('../img/Logo_header_A.png');
+    width: 156px;
+    height: 38px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+}
+
+.toogle-right-mobile {
+    float: right;
+    top: 7px;
+    position: relative;
+}
+
+.img-msg-mobile{
+    background: url('../img/Mail_Icon_A.png');
+    width: 30px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+    background-size: 100%;
+}
+
+/*carousel*/
+.carousel-indicators.carousel-indicatorsthumb-home{
+    bottom: 5px;
+}
+
+.carousel-indicators.carousel-indicatorsthumb-home li {
+    background-color: rgba(0,0,0,.5);
+    border: 1px solid rgba(0,0,0,.5);
+}
+
+.carousel-indicators.carousel-indicatorsthumb-home .active {
+    background-color: #000;
+    border-color: #5a5a5a;
+}
+
+/*body*/
+.container-content-mobile {
+    padding: 50px 0 0;
+}
+
+
+.thumb-content-mobile {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: -30px;
+}
+
+.thumb-content-mobile-second {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.head-thumb-content-mobile {
+    width: 100%;
+    display: block;
+}
+
+.head-thumb-content-mobile1 {
+    width: 100%;
+    display: block;
+}
+
+.headimg-thumb-content-mobile-thumb1{
+    text-align: center;
+    width: 92%;
+    margin: auto;
+}
+
+.headimg-thumb-content-mobile {
+    width: 100%;
+    height: 231px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.headimg-thumb-content-mobile-thumb1 img {
+    width: 100%;
+}
+
+.body-thumb-content-mobile {
+    width: 92%;
+    height: auto;
+    background: #fff;
+    margin: auto;
+    position: relative;
+    top: -45px;
+    text-align: center;
+    padding: 20px 10px 10px;
+}
+
+.body-thumb-content-mobile.body-thumb-content-mobile1 {
+    position: static;
+}
+
+.img-1homes-head {
+    width: 100%;
+    display: block;
+}
+
+.img-homes-headmobile {
+    background: url('../img/Title_1_home(A)mobile.png');
+    width: 144px;
+    height: 86px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-producthomes-headmobile{
+    background: url('../img/Title_2_home(A)mobile.png');
+    width: 225px;
+    height: 40px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-destinationhomes-headmobile{
+    background: url('../img/Title_3_home(A)mobile.png');
+    width: 171px;
+    height: 31px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-travelhomes-headmobile{
+    background: url('../img/Title_4_home(A)mobile.png');
+    width: 160px;
+    height: 57px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-journeyhomes-headmobile{
+    background: url('../img/Title_5_home(A)mobile.png');
+    width: 169px;
+    height: 36px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-galleryhomes-headmobile{
+    background: url('../img/Title_6_home(A)mobile.png');
+    width: 116px;
+    height: 43px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-about-outstory-headmobile{
+    background: url('../img/Title_1_about(A)mobile.png');
+    width: 152px;
+    height: 56px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-about-story-headmobile{
+    background: url('../img/Title_2_about(A)mobile.png');
+    width: 242px;
+    height: 25px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-about-headchef-headmobile{
+    background: url('../img/Title_3_about(A)mobile.png');
+    width: 171px;
+    height: 65px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-destination-homes-headmobile{
+    background: url('../img/Title_1_Destinations(A)mobile.png');
+    width: 161px;
+    height: 44px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-destination-detailtuscany{
+    background: url('../img/Title_1_Tuscany(A)mobile.png');
+    width: 156px;
+    height: 74px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-destination-detailfeel{
+    background: url('../img/Title_2_Tuscany(A)mobile.png');
+    width: 154px;
+    height: 66px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-destination-detailhight{
+    background: url('../img/Title_3_Tuscany(A)mobile.png');
+    width: 162px;
+    height: 44px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-destination-detailitenary{
+    background: url('../img/Title_4_Tuscany(A)mobile.png');
+    width: 148px;
+    height: 46px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-travel-homes-headmobile{
+    background: url('../img/Title_1_services(A)mobile.png');
+    width: 192px;
+    height: 64px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-travel-landtour-headmobile{
+    background: url('../img/Title_2_services(A)mobile.png');
+    width: 172px;
+    height: 66px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-travel-seatour-headmobile{
+    background: url('../img/Title_3_services(A)mobile.png');
+    width: 148px;
+    height: 64px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-travel-skitrips-headmobile{
+    background: url('../img/Title_4_services(A)mobile.png');
+    width: 142px;
+    height: 64px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-travel-exotic-headmobile{
+    background: url('../img/Title_5_services(A)mobile.png');
+    width: 268px;
+    height: 58px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-recentpost-homes-headmobile{
+    background: url('../img/Title_1_blog(A)mobile.png');
+    width: 210px;
+    height: 38px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-productoff-headmobile{
+    background: url('../img/Title_1_product(A)mobile.png');
+    width: 248px;
+    height: 48px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-bespoke-headmobile{
+    background: url('../img/Title_2_product(A)mobile.png');
+    width:144px;
+    height: 64px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-featuredprod-headmobile{
+    background: url('../img/Title_3_product(A)mobile.png');
+    width:258px;
+    height: 66px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-finedinning-headmobile{
+    background: url('../img/Title_4_product(A)mobile.png');
+    width:188px;
+    height: 66px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-israelh-headmobile{
+    background: url('../img/Title_5_product(A)mobile.png');
+    width:254px;
+    height: 60px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-contactx-headmobile{
+    background: url('../img/Title_1_contact(A)mobile.png');
+    width:192px;
+    height: 46px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.img-galleryhomesx-headmobile{
+    background: url('../img/Title_1_gallery(A)mobile.png');
+    width:120px;
+    height: 46px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.body-thumb-content-mobile p {
+    padding: 0 5px;
+    font-size: 13px;
+    color: #4b4b4b;
+    font-family: 'Verdana';
+    margin: 5px 0 15px;
+}
+
+.body-thumb-content-mobile h4 {
+    padding:0 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: 'Gotham';
+    line-height: 20px;
+    color: #404040;
+    margin: 0 0 20px;
+    letter-spacing: 1px;
+}
+
+.btn.btn-thumb-home {
+    color: #e3c37a;
+    font-size: 13px;
+    font-family: 'Gotham';
+    letter-spacing: 1px;
+    border: 3px solid#e3c37a;
+    padding: 8px 22px 6px;
+    border-radius: 0;
+    position: relative;
+    text-transform: uppercase;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+h4.h4about {
+    border: 2px dotted#d3d3d3;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.txt-title-destinations {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+p.txt-title-destinations1 {
+    font-family: 'nabilaregular';
+    color: #e3c37a;
+    font-size: 28px;
+    text-transform: capitalize;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+p.txt-title-destinations2 {
+    font-size: 15px;
+    font-family: 'Gotham';
+    color: #4b4b4b;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+p.txt-title-destinations1:visited,
+p.txt-title-destinations2:visited{
+    text-decoration: none;
+}
+
+.bg-papper-mobile{
+    background-image: url('../img/Pic_Notes1(A)mobile.png'), url('../img/Pic_Notes11(A)mobile.png');
+    background-position: 0 0, 0 bottom;
+    background-repeat: repeat-x, repeat-x;
+    padding: 9px 0px;
+    margin-top: 15px;
+}
+
+.bg-white-desdetail{
+    background: #fff;
+    padding:20px 10px 20px 25px;
+}
+
+.bg-white-desdetail ul{
+    margin: 0;
+}
+
+.bg-white-desdetail ul li{
+    list-style-image: url('../img/Pic_Cek(A)mobile.png');
+    border-bottom: 1px solid#d3d3d3;
+    text-align: left;
+    color: #4b4b4b;
+    margin: 0;
+}
+
+.bg-white-desdetail ul li p{
+    font-size: 13px;
+    color: #4b4b4b;
+    margin: 1px 0;
+    padding: 0 5px 0 5px;
+}
+
+.details-itenary {
+    width: 100%;
+    padding: 10px 10px 15px;
+    border-bottom: 2px dotted#d3d3d3;
+}
+
+.details-itenary h4{
+    padding: 0 5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: 'Gotham';
+    line-height: 20px;
+    color: #404040;
+    margin: 0 0 15px;
+    letter-spacing: 1px;
+}
+
+.details-itenary p{
+    margin: 0;
+}
+
+/*product*/
+.btn-thumb-product{
+    width: 90%;
+}
+
+a.prod-booknow {
+    border-top: 3px dotted#d3d3d3;
+    border-bottom: 3px dotted#d3d3d3;
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding: 10px 0;
+}
+
+.con-prod {
+    width: 33.3%;
+    float: left;
+}
+
+.prod-booknow1 p {
+    text-transform: uppercase;
+    font-size: 38px;
+    font-family: 'Gotham';
+    color: #404040;
+    margin: 0;
+    letter-spacing: 2px;
+    text-align: left;
+    line-height: 37px;
+}
+
+
+p.prod-booknow2-1 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: 'Gotham';
+    color: #404040;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+.con-prod p {
+    margin: 0;
+}
+
+p.prod-booknow2-2 {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-family: 'Gotham';
+    color: #404040;
+    letter-spacing: 1px;
+}
+
+.prod-booknow3 {
+    text-align: right;
+}
+
+.btn-booknow {
+    text-transform: uppercase;
+    font-size: 17px !important;
+    font-family: 'Gotham';
+    color: #404040;
+    letter-spacing: 1px;
+    border: 3px solid#404040;
+    border-radius: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: right;
+}
+
+a.btn-product-tus {
+    border: 2px dotted#d3d3d3;
+    width: 100%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 0px 10px;
+    color: #404040;
+}
+
+a.btn-product-tus h5 {
+    display: inline-block;
+    font-size: 22px;
+    font-family: 'nabilaregular';
+    text-transform: capitalize;
+    margin-right: 15px;
+}
+
+a.btn-product-tus h6 {
+    display: inline-block;
+    font-family: 'Verdana';
+    font-size: 15px;
+}
+
+.btn-tuscan1x{
+    background: url(../img/Button_Price_A.png);
+    width: 270px;
+    height: 50px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/*blog*/
+.body-thumb-content-blog h4{
+    margin: 0;
+}
+
+.list-content-blog {
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid#ccc;
+}
+
+.left-content-blog {
+    width: 26%;
+    float: left;
+}
+
+.right-content-blog {
+    width: 74%;
+    float: left;
+    padding: 0 0 0 10px;
+}
+
+.imgthumb-content-blog {
+    width: 70px;
+    height: 70px;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.right-content-blog a{
+    margin: 0;
+    padding: 0;
+}
+
+.right-content-blog a h4{
+    text-align: left;
+    margin-bottom: 7px;
+    padding: 0;
+}
+
+p.tgl-blog-mobile {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+.fb-comments-detail {
+    width: 92%;
+    height: auto;
+    background: #fff;
+    margin: auto;
+    top: -45px;
+    text-align: center;
+    padding: 10px 10px 10px;
+    margin-bottom: 15px;
+}
+
+/*contact*/
+.form-control-contact {
+    border-radius: 0;
+    border: 0px;
+    margin-bottom: 20px !important;
+    height: 37px;
+    width: 85%;
+    margin: auto;
+    box-shadow: none;
+    text-align: center;
+    margin-top: 15px;
+    background: #f4f1ea;
+}
+
+.form-contactsecond-mobilex {
+    border: 2px dotted#d3d3d3;
+    padding: 15px 25px;
+}
+
+.form-control-contactmsg {
+    border-radius: 0;
+    border: 0px;
+    margin-bottom: 15px !important;
+    height: 37px;
+    width: 100%;
+    margin: auto;
+    box-shadow: none;
+    text-align: left;
+    background: #f4f1ea;
+    font-size: 13px;
+}
+
+.btn-thumb-contact {
+    color: #4b4b4b;
+    font-size: 13px;
+    font-family: 'Verdana';
+    letter-spacing: 2px;
+    padding: 10px 35px 10px;
+    border-radius: 0;
+    position: relative;
+    text-transform: capitalize;
+    background: #e3c37a;
+}
+
+/*gallery*/
+.gallery-mobile-content {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+}
+
+.col-gallery-mobile-content {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 4%;
+}
+
+.col-style1-content {
+    width: 48%;
+    height: 545px;
+    float: left;
+    margin-right: 4%;
+    overflow: hidden;
+}
+
+.col-style2-content {
+    width: 48%;
+    height: 545px;
+    float: left;
+    overflow: hidden;
+}
+
+.col-style5-content1,
+.col-style4-content1,
+.col-style3-content1,
+.col-style2-content1{
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+    background-size: cover;
+}
+
+.col-style1-content1 {
+    width: 100%;
+    height: 48%;
+    background: #f8f8f8;
+    margin-bottom: 8%;
+    background-size: cover;
+}
+
+.col-style1-content2 {
+    width: 100%;
+    height: 48%;
+    background: #f8f8f8;
+    background-size: cover;
+}
+
+.col-style3-content{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.col-style3-content1{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.col-style3-content {
+    width: 100%;
+    height: 230px;
+    float: left;
+    overflow: hidden;
+}
+
+.col-style5-content {
+    width: 100%;
+    height: 165px;
+    float: left;
+    overflow: hidden;
+}
+
+.col-style4-content {
+    width: 48%;
+    height: 230px;
+    margin-right: 4%;
+    float: left;
+    overflow: hidden;
+}
+
+.col-style5-content {
+    width: 48%;
+    height: 230px;
+    float: left;
+    overflow: hidden;
+}
+
+.col-style6-content{
+    width: 48%;
+    height: 545px;
+    float: left;
+    margin-right: 4%;
+    overflow: hidden;
+}
+
+.col-style7-content {
+    width: 48%;
+    height: 545px;
+    float: left;
+    overflow: hidden;
+}
+
+.col-style6-content1 {
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+    background-size: cover;
+}
+
+.col-style7-content1 {
+    width: 100%;
+    height: 48%;
+    background: #f8f8f8;
+    margin-bottom: 8%;
+    background-size: cover;
+}
+
+.col-style7-content2 {
+    width: 100%;
+    height: 48%;
+    background: #f8f8f8;
+    background-size: cover;
+}
+
+/*footer*/
+.container-footer {
+    width: 100%;
+    display: block;
+    background: #f1d186;
+}
+
+.container-footer ul {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+}
+
+.container-footer ul li{
+    list-style: none;
+    width: 100%;
+    padding: 7px 0;
+    border-bottom: 1px solid#4B4A4A;
+}
+
+.container-footer ul li a {
+    color: #4B4A4A;
+    font-size: 14px;
+}
+
+.sosmed-footer-mobile {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0px auto 10px;
+}
+
+.sosmed-footer-mobile span{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a.fb-footermobile {
+    background: url('../img/Button_Sosmed_Facebook.png');
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+}
+
+a.ig-footermobile {
+    background: url('../img/Button_Sosmed_Insta.png');
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+}
+
+.container-footer p{
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+
+
+/*responsive*/
+
+@media(max-width: 480px){
+
+    .col-style7-content,
+    .col-style6-content,
+    .col-style2-content,
+    .col-style1-content {
+        height: 421px;
+    }
+
+    .col-style3-content {
+        height: 202px;
+    }
+
+    .col-style5-content,
+    .col-style4-content {
+        height: 202px;
+    }
+
+}
+
+@media(max-width: 414px){
+
+    .col-style7-content,
+    .col-style6-content,
+    .col-style2-content,
+    .col-style1-content {
+        height: 361px;
+    }
+
+    .col-style3-content {
+        height: 173px;
+    }
+
+    .col-style5-content,
+    .col-style4-content {
+        height: 173px;
+    }
+
+}
+
+@media(max-width: 375px){
+
+    .col-style7-content,
+    .col-style6-content,
+    .col-style2-content,
+    .col-style1-content {
+        height: 325px;
+    }
+
+    .col-style3-content {
+        height: 156px;
+    }
+
+    .col-style5-content,
+    .col-style4-content {
+        height: 156px;
+    }
+
+}
+
+
+@media(max-width: 360px){
+
+    .col-style7-content,
+    .col-style6-content,
+    .col-style2-content,
+    .col-style1-content {
+        height: 311px;
+    }
+
+    .col-style3-content {
+        height: 149px;
+    }
+
+    .col-style5-content,
+    .col-style4-content {
+        height: 149px;
+    }
+
+}
+
+@media(max-width: 320px){
+
+       .bg-white-desdetail ul li p{
+            font-size: 12px;
+        }
+
+        .col-style7-content,
+        .col-style6-content,
+        .col-style2-content,
+        .col-style1-content {
+            height: 273px;
+        }
+
+        .col-style3-content {
+            height: 131px;
+        }
+
+        .col-style5-content,
+        .col-style4-content {
+            height: 131px;
+        }
+
+}
+
+
+/*retina*/
+
+@media (min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1),(-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+
+    .img-logo-mobilenav {
+        background: url('../img/Logo_KCT_Ham(B).png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-close-mobile{
+        background: url('../img/Close_NavButton(B).png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .toggle-wix-mobile{
+        background: url('../img/Hamburger_Button_B.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-logo-mobile {
+        background: url('../img/Logo_header_B.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-msg-mobile{
+        background: url('../img/Mail_Icon_B.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-homes-headmobile {
+        background: url('../img/Title_1_home(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-producthomes-headmobile{
+        background: url('../img/Title_2_home(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-destinationhomes-headmobile{
+        background: url('../img/Title_3_home(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-travelhomes-headmobile{
+        background: url('../img/Title_4_home(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-journeyhomes-headmobile{
+        background: url('../img/Title_5_home(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-galleryhomes-headmobile{
+        background: url('../img/Title_6_home(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-about-outstory-headmobile{
+        background: url('../img/Title_1_about(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-about-story-headmobile{
+        background: url('../img/Title_2_about(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-about-headchef-headmobile{
+        background: url('../img/Title_3_about(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-destination-homes-headmobile{
+        background: url('../img/Title_1_Destinations(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-productoff-headmobile{
+        background: url('../img/Title_1_product(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-bespoke-headmobile{
+        background: url('../img/Title_2_product(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-featuredprod-headmobile{
+        background: url('../img/Title_3_product(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-finedinning-headmobile{
+        background: url('../img/Title_4_product(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+
+    .img-israelh-headmobile{
+        background: url('../img/Title_5_product(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-destination-detailtuscany{
+        background: url('../img/Title_1_Tuscany(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-destination-detailfeel{
+        background: url('../img/Title_2_Tuscany(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-destination-detailhight{
+        background: url('../img/Title_3_Tuscany(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-destination-detailitenary{
+        background: url('../img/Title_4_Tuscany(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-recentpost-homes-headmobile{
+        background: url('../img/Title_1_blog(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-travel-homes-headmobile{
+        background: url('../img/Title_1_services(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-travel-landtour-headmobile{
+        background: url('../img/Title_2_services(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-travel-seatour-headmobile{
+        background: url('../img/Title_3_services(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-travel-skitrips-headmobile{
+        background: url('../img/Title_4_services(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-travel-exotic-headmobile{
+        background: url('../img/Title_5_services(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-galleryhomesx-headmobile{
+        background: url('../img/Title_1_gallery(A)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .btn-tuscan1x{
+        background: url(../img/Button_Price_B.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .img-contactx-headmobile{
+        background: url('../img/Title_1_contact(B)mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    a.fb-footermobile {
+        background: url('../img/Button_Sosmed_Facebook(mobile)_B.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    a.ig-footermobile {
+        background: url('../img/Button_Sosmed_Insta(mobile)_B.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+
+
+}

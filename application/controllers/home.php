@@ -12,8 +12,7 @@ class Home extends CI_Controller {
 		$this->load->helper('viewcontent');
       $this->load->model(array('m_message'));
       $this->load->model(array('m_home'));
-      $this->load->model(array('m_menu'));
-		// $this->load->model(array('m_login'));
+		$this->load->library('user_agent');
 		ini_set('display_errors', 1);
 	}
 
@@ -30,8 +29,14 @@ class Home extends CI_Controller {
 		$maincontent['listContent'] = $this->m_home->getContent_Home($id);
 		$maincontent['headerContent'] = $this->m_home->getHeaderContent_Home($id);
 
-		$data['content']  = $this->load->view('front/home/v_home', $maincontent, true);
-		$this->load->view('front/v_base',$data );
+		if (!$this->agent->is_mobile()) {
+			$data['content']  = $this->load->view('front/home/v_home', $maincontent, true);
+			$this->load->view('front/v_base',$data );
+		}else {
+			$data['content']  = $this->load->view('mobile/v_home', $maincontent, true);
+			$this->load->view('mobile/v_base',$data );
+		}
+
 	}
 
    public function newmessage(){
