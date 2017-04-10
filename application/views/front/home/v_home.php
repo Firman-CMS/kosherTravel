@@ -24,18 +24,19 @@
 
     <div class="container-fluid container-fluid-bodythumb p-nol">
       <?php
-         foreach ($listContent as $content) {
-            // print_r($content->image);
-            $num_files_array = $content->image;
-   			$num_files_array = rtrim($num_files_array,',');
-   			$num_files_array = explode(",", $num_files_array);
-
-            echo contentright($content);
-            // echo count(array_filter($num_files_array));
-
+         if(!empty($listContent)){
+            $i=0;
+            foreach ($listContent as $content) {
+               if ($i % 2 == 0){
+                  echo contentright($content);
+               }else {
+                  echo contentleft($content);
+               }
+               $i++;
+            }
          }
       ?>
-
+      <?php /*
          <div class="container-kosher-thumb container-kosher-thumb1">
             <div class="container-twocoloumn">
                <div class="twocoloumn-home-gen twocoloumn-home-img twocoloumn-homew twocoloumn-home-singleimg">
@@ -162,5 +163,5 @@
                </div>
             </div>
          </div><!--rightmulti container-kosher-thumb1 gallery-->
-
+         */?>
     </div><!-- container-fluid-bodythumb -->

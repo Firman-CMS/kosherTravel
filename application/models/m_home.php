@@ -9,7 +9,7 @@ class M_home extends CI_Model {
                INNER JOIN (
                SELECT id_parent, submenu_id , max(publish_at) publish
                FROM contents
-               WHERE submenu_id != 2
+               WHERE submenu_id != 2 AND status = 1 AND is_delete = 0
                GROUP BY id_parent, submenu_id
                ) b ON b.id_parent = a.id_parent AND b.submenu_id = a.submenu_id AND b.publish = a.publish_at
                inner join menu c ON c.id=a.submenu_id

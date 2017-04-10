@@ -67,8 +67,8 @@ $contact = json_decode($json);
 
                 <div class="navhead-kosher navhead-kosher-desktop">
                     <ul>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="./about.html">About Us</a></li>
+                        <li class="active"><a href="<?php echo base_url();?>home">Home</a></li>
+                        <li><a href="<?php echo base_url();?>aboutus">About Us</a></li>
                         <li><a href="#">Blog</a></li>
                         <li class="dropdown">
                             <a href="./product.html" class="dropbtn">Product Offering</a>
@@ -77,7 +77,7 @@ $contact = json_decode($json);
                               <a href="#">Greece Truffle Hunt Tour</a>
                             </div>
                         </li>
-                        <li><a href="#">Travel Services</a></li>
+                        <li><a href="<?php echo base_url();?>travelservice">Travel Services</a></li>
                         <li><a href="#">Destinations</a></li>
                         <li><a href="#">Gallery</a></li>
                         <li><a href="#">Contact Us</a></li>
